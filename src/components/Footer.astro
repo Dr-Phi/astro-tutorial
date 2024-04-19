@@ -1,0 +1,37 @@
+---
+const github = "Dr-Phi";
+const linkedin = "elias-rojas-l";
+---
+
+<footer>
+  <p>
+    Connect with me on <a
+      target="_blank"
+      href={`https://www.linkedin.com/in/${linkedin}/`}>LinkedIn</a
+    >🤝
+  </p>
+  <p>
+    &lt; Learn more about my projects on <a
+      target="_blank"
+      href={`https://www.github.com/${github}`}>GitHub</a
+    > /&gt;
+  </p>
+</footer>
+
+<style>
+  footer {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  a {
+    padding: 0.4rem 0.6rem;
+    color: white;
+    background-color: #4c1d95;
+    text-decoration: none;
+    border-radius: 0.5rem;
+  }
+  a:hover {
+    background-color: #6736b1;
+  }
+</style>
