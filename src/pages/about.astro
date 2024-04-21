@@ -66,3 +66,11 @@ const goal = 2;
     )
   }
 </BaseLayout>
+
+<script>
+  document.addEventListener("astro:after-swap", () => {
+    localStorage.theme === "dark"
+      ? document.documentElement.classList.add("dark")
+      : document.documentElement.classList.remove("dark");
+  });
+</script>

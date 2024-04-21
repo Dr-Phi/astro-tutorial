@@ -1,20 +1,21 @@
 ---
+import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import BlogPost from "../../components/BlogPost.astro";
 
 export async function getStaticPaths() {
-  const allPosts = await Astro.glob("../posts/*.md");
+  const allPosts = await getCollection("posts");
 
   /*  1. Map each post to its array of tags.
     2. Flatten the array of arrays of tags into a single array.
     3. Create a Set to automatically filter out duplicate tags.
     4. Convert the Set back into an array using the ...spread operator.  */
   const uniqueTags = [
-    ...new Set(allPosts.map((post) => post.frontmatter.tags).flat()),
+    ...new Set(allPosts.map((post) => post.data.tags).flat()),
   ];
   return uniqueTags.map((tag) => {
     const filteredPosts = allPosts.filter((post) =>
-      post.frontmatter.tags.includes(tag)
+      post.data.tags.includes(tag)
     );
     return {
       params: { tag },
@@ -32,7 +33,7 @@ const { posts } = Astro.props;
   <ul>
     {
       posts.map((post) => (
-        <BlogPost url={post.url} title={post.frontmatter.title} />
+        <BlogPost url={`/posts/${post.slug}/`} title={post.data.title} />
       ))
     }
   </ul>
