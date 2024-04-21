@@ -4,7 +4,10 @@
 
 <nav class="nav-links">
   <a href="/">Home</a>
-  <a href="/about/">About</a>
   <a href="/blog/">Blog</a>
+  <!-- data-astro-reload will make the browser refreshes every time you click 
+    This will override the <ViewTransitions /> router entirely 
+    and any of it's animations -->
+  <a href="/about/" data-astro-reload>About</a>
   <a href="/tags/">Tags</a>
 </nav>

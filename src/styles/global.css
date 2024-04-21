@@ -1,15 +1,28 @@
 html {
-  background-color: #f1f5f9;
+  background-color: #faecc9;
   font-family: sans-serif;
+  color: #282119;
 }
 
 html.dark {
-  background-color: #201f32;
-  color: #d6bd5c;
+  background-color: #414234;
+  color: #d4c29e;
 }
 
 .dark .nav-links a {
-  color: #fff;
+  color: #faecc9;
+}
+
+.dark a:visited,
+.dark a:hover,
+.dark a:active {
+  text-decoration: none;
+  color: #bfd7ea;
+}
+.dark div.tags > p.tag > a,
+.dark div.tags > p.tag > a:visited {
+  text-decoration: none;
+  color: #574a40;
 }
 
 body {
@@ -40,7 +53,7 @@ h1 {
   width: 40px;
   height: 5px;
   margin-bottom: 10px;
-  background-color: #ff9776;
+  background-color: #8a4e26;
 }
 
 .nav-links {
@@ -60,11 +73,12 @@ h1 {
   font-size: 1.2rem;
   font-weight: bold;
   text-transform: uppercase;
+  color: #c97338;
 }
 
 .nav-links a:hover,
 .nav-links a:focus {
-  background-color: #ff9776;
+  color: #8a4e26;
 }
 
 .expanded {
